@@ -2,20 +2,20 @@
 ## Demo description
 In this demo I'll show the new capability available in the *JBoss Data Grid 6.5*: [**Externalize HTTP Session from JBoss**](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Data_Grid/6.5/html-single/Administration_and_Configuration_Guide/index.html#chap-Externalize_Sessions)
 
-This capability allow us to externalize the HTTP Web Sessions from the Application Server to a external (remote) Data Grid cluster.
-In some scenarios this can alleviate the Application Server memory consumption and improve the *availability* and *failover* of your Web Application User State. There are other great benefit this approach can bring to your setup: Cross data center state replication.
+This capability allow us to externalize the HTTP Web Sessions from the Application Server to an external (remote) Data Grid cluster.
+In some scenarios this can alleviate the Application Server memory consumption and improve the *availability* and *failover* of your Web Application User State. There are other great benefit this approach can bring to your setup: *Cross data center state replication*.
 
-The nice thing about this capability offered By JBoss EAP + JDG is that it can be completely transparent for your code.
+The nice thing about this capability offered By **JBoss EAP + JDG** is that it can be completely transparent for your code.
 You don't have to change your code or implement any specific API.
-This integration can be enabled just with a couple of configuration in the EAP Caching subsystem.
+This integration can be enabled just with a little of configuration in the EAP Caching subsystem.
 
 ![EAP and JDG  - EAP and JDG through Hot Rod protocol](docs/demo-images/demo-diagram.png "EAP and JDG  - EAP and JDG through Hot Rod protocol")
 
 ## Software required for this demo
 
  * JDK >= 1.7
- * JBoss EAP 6.<last update>
- * JBoss JDG 6.<last update>
+ * JBoss EAP >= 6.4
+ * JBoss JDG >= 6.5
  * Apache Maven 3.x
 
 ## Environment
@@ -24,6 +24,20 @@ This integration can be enabled just with a couple of configuration in the EAP C
  * two JBoss JDG Clustered nodes (`clustered.xml` configuration)
  * two different Internet browsers
  * Terminal console
+
+## Demo setup
+
+ 1. Clone (or [download](https://github.com/rafaeltuelho/jboss-middleware-demos/archive/master.zip)) this repository into your workstation
+ ```
+ git clone https://github.com/rafaeltuelho/jboss-middleware-demos.git
+
+ cd eap-jdg-httpsession-offload-demo/
+ ```
+ 2. Download the JBoss EAP and JDG binaries into `eap-jdg-httpsession-offload-demo/installs` subdirectory
+ 3. execute the `./init.sh` script
+ 4. execute the `./startServers.sh` script
+ 5. follow the next session to test the demo.
+
 
 ## Testing
 
