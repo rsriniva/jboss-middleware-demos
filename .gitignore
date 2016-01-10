@@ -1,0 +1,10 @@
+target/
+.DS_Store
+RemoteSystemsTempFiles/
+.index/
+repository/
+*.log
+*summary
+.settings
+.classpath
+.tern*
