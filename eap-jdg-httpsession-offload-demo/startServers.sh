@@ -112,14 +112,18 @@ case "$1" in
       echo -e "\n ====== \n" >> startup_summary
       startEAPNode eap_node1 0
       startEAPNode eap_node2 100
+
+      cat startup_summary
       ;;
   eap_node[1-9])
       [[ -z $2 ]] && usage
       startEAPNode $1 $2
+      cat startup_summary
       ;;
   jdg_node*)
       [[ -z $2 ]] && usage
       startJDGNode $1 $2
+      cat startup_summary
       ;;
   *)
       ## If no parameters are given, print which are avaiable.

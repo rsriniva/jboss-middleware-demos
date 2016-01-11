@@ -75,7 +75,7 @@ if [ -x $TARGET_DIR/. ]; then
 	rm -rf $TARGET_DIR/*
 fi
 
-read
+#read
 
 # Run installers.
 echo "JBoss EAP installer running now..."

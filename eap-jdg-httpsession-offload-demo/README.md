@@ -34,6 +34,8 @@ This integration can be enabled just with a little of configuration in the EAP C
  cd eap-jdg-httpsession-offload-demo/
  ```
  2. Download the JBoss EAP and JDG binaries into `eap-jdg-httpsession-offload-demo/installs` subdirectory
+  * `jboss-eap-6.4.0-installer.jar`
+  * `jboss-datagrid-6.5.1-server.zip`
  3. execute the `./init.sh` script
  4. execute the `./startServers.sh` script
  5. follow the next session to test the demo.
