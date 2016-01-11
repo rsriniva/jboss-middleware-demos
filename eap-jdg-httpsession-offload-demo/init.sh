@@ -131,8 +131,8 @@ mvn clean install
 echo
 echo Deploying the Payment CDI Event web application. 
 echo
-cp target/jboss-payment-cdi-event.war ../../$JBOSS_HOME/eap_node1/deployments
-cp target/jboss-payment-cdi-event.war ../../$JBOSS_HOME/eap_node2/deployments
+cp target/jboss-payment-cdi-event.war ../../$JBOSS_HOME/eap_node1/deployments/jboss-payment-cdi-event.war.dodeploy
+cp target/jboss-payment-cdi-event.war ../../$JBOSS_HOME/eap_node2/deployments/jboss-payment-cdi-event.war.dodeploy
 cd ../..
 
 echo -e "\n Now you need to start the cluster."

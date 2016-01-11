@@ -2,7 +2,7 @@
 
 EAP_HOME="./target/jboss-eap-6.4"
 JDG_HOME="./target/jboss-datagrid-6.5.1-server"
-STARTUP_WAIT=5
+STARTUP_WAIT=6
 
 
 function waitForStartup(){
@@ -43,6 +43,7 @@ function startJDGNode(){
    $JDG_HOME/bin/clustered.sh \
     -b 127.0.0.1 \
     -Djboss.node.name=$node_name \
+    -Djava.net.preferIPv4Stack=true \
     -Djboss.socket.binding.port-offset=$ports_offset \
     -Djgroups.bind_addr=127.0.0.1 &> ./${node_name}.log&
 
@@ -70,6 +71,8 @@ function startEAPNode(){
   -Djboss.server.base.dir=$EAP_HOME/$node_name \
   -Djboss.node.name=$node_name \
   -Djboss.socket.binding.port-offset=$ports_offset \
+  -Djava.net.preferIPv4Stack=true \ 
+  -Djgroups.bind_addr=127.0.0.1 \ 
   -Djdg.remoting.hothod.node1.addr=127.0.0.1 \
   -Djdg.remoting.hothod.node1.port=11822 \
   -Djdg.remoting.hothod.node2.addr=127.0.0.1 \
@@ -113,17 +116,19 @@ case "$1" in
       startEAPNode eap_node1 0
       startEAPNode eap_node2 100
 
-      cat startup_summary
+      summary
       ;;
   eap_node[1-9])
       [[ -z $2 ]] && usage
       startEAPNode $1 $2
-      cat startup_summary
+      
+      summary
       ;;
   jdg_node*)
       [[ -z $2 ]] && usage
       startJDGNode $1 $2
-      cat startup_summary
+
+      summary
       ;;
   *)
       ## If no parameters are given, print which are avaiable.
