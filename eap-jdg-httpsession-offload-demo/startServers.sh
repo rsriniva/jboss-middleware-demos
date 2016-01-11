@@ -71,8 +71,8 @@ function startEAPNode(){
   -Djboss.server.base.dir=$EAP_HOME/$node_name \
   -Djboss.node.name=$node_name \
   -Djboss.socket.binding.port-offset=$ports_offset \
-  -Djava.net.preferIPv4Stack=true \ 
-  -Djgroups.bind_addr=127.0.0.1 \ 
+  -Djava.net.preferIPv4Stack=true \
+  -Djgroups.bind_addr=127.0.0.1 \
   -Djdg.remoting.hothod.node1.addr=127.0.0.1 \
   -Djdg.remoting.hothod.node1.port=11822 \
   -Djdg.remoting.hothod.node2.addr=127.0.0.1 \
